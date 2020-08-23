@@ -6,28 +6,36 @@ import os
 
 
 app = Flask(__name__)
-collections = [ 'picasso' ]
+
+collections = [
+                'picasso',
+                'japanese',
+                'impressionism',
+                'postimpressionism',
+                'modern',
+                'contemporary',
+                'western',
+                'renaissance',
+                'tate_gallery',
+                'google_gallery',
+              ]
 
 
 @app.route('/')
 def home():
   html = get_header('all')
-
   for endpoint in collections:
-    html += '<a href=' + endpoint + '>' + endpoint + '</a>'
-
+    html += '<a href=' + endpoint + '>' + endpoint + '</a><p>'
   return html
 
 
-for collection in collections:
-  @app.route('/' + collection)
-  def each_collection():
-    url = get_image(collection)
-    html = get_header(collection)
-    html += '<img src=' + url + ' height=95%><br>' + url.split('/')[-1]
-    html += get_footer(collection)
-
-    return html
+@app.route('/<collection>')
+def each_collection(collection):
+  url = get_image(collection)
+  html = get_header(collection)
+  html += '<img src=' + url + ' height=95%><br>' + url.split('/')[-1]
+  html += get_footer(collection)
+  return html
 
 
 def get_header(collection):
@@ -36,10 +44,8 @@ def get_header(collection):
 
 
 def get_image(collection):
-
   with open('../reart_' + collection + '_image_urls.json', 'r') as infile:
     images = json.load(infile)
-
   return random.choice(images)
 
 
