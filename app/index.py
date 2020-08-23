@@ -25,7 +25,7 @@ collections = [
 def home():
   html = get_header('all')
   for endpoint in collections:
-    html += '<a href=' + endpoint + '>' + endpoint + '</a><p>'
+    html += '<a href=' + endpoint + '><h1>' + endpoint + '</h1></a><p>'
   return html
 
 
@@ -40,7 +40,8 @@ def each_collection(collection):
 
 def get_header(collection):
   return '<html><head><meta http-equiv=refresh content=60>' + \
-         '<title>reart - ' + collection + '</title></head><body>'
+         '<title>reart - ' + collection + '</title></head>' + \
+         '<body bgcolor=black><font color=white>'
 
 
 def get_image(collection):
