@@ -35,13 +35,14 @@ def home():
 def each_collection(collection):
   url = get_image(collection)
   html = get_header(collection)
-  html += '<img src=' + url + ' height=95%><br>' + url.split('/')[-1]
+  html += '<center><img src=' + url + ' height=95%><br>' + url.split('/')[-1]
   html += get_footer(collection)
   return html
 
 
 def get_header(collection):
   return '<html><head><meta http-equiv=refresh content=' + str(refresh) + '>' + \
+         '<style type="text/css"> body { overflow: hidden; } </style>' + \
          '<title>reart - ' + collection + '</title></head>' + \
          '<body bgcolor=black><font color=white>'
 
