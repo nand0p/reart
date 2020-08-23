@@ -7,6 +7,8 @@ import os
 
 app = Flask(__name__)
 
+refresh = 30
+
 collections = [
                 'picasso',
                 'japanese',
@@ -39,7 +41,7 @@ def each_collection(collection):
 
 
 def get_header(collection):
-  return '<html><head><meta http-equiv=refresh content=60>' + \
+  return '<html><head><meta http-equiv=refresh content=' + str(refresh) + '>' + \
          '<title>reart - ' + collection + '</title></head>' + \
          '<body bgcolor=black><font color=white>'
 
