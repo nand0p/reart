@@ -20,6 +20,7 @@ collections = [
                 'renaissance',
                 'tate_gallery',
                 'google_gallery',
+                'kunsthistorisches',
               ]
 
 
@@ -43,6 +44,10 @@ def each_collection(collection):
 def get_header(collection):
   return '<html><head><meta http-equiv=refresh content=' + str(refresh) + '>' + \
          '<style type="text/css"> body { overflow: hidden; } </style>' + \
+         '<script async src="https://www.googletagmanager.com/gtag/js?id=UA-32710227-4"></script>' + \
+         '<script>window.dataLayer = window.dataLayer || [];' + \
+         'function gtag(){dataLayer.push(arguments);}' + \
+         'gtag("js", new Date()); gtag("config", "UA-32710227-4");</script>' + \
          '<title>reart - ' + collection + '</title></head>' + \
          '<body bgcolor=black><font color=white>'
 
