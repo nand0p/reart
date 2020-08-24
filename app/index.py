@@ -21,6 +21,7 @@ collections = [
                 'tate_gallery',
                 'google_gallery',
                 'kunsthistorisches',
+                'european',
               ]
 
 
