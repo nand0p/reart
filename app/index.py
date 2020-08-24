@@ -22,6 +22,8 @@ collections = [
                 'google_gallery',
                 'kunsthistorisches',
                 'european',
+                'gauguin',
+                'toulouse-lautrec',
               ]
 
 
