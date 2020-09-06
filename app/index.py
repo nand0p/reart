@@ -32,7 +32,7 @@ def home():
   html = get_header('collections')
   html += '<table height=65% width=100%><tr><td width=100>.</td><td height=65%>'
   for endpoint in collections:
-      html += '<a href=' + endpoint + '><b><font size=8>' + endpoint + '</font></b></a> :::: '
+      html += '<a href=' + endpoint + '><b><font size=8>' + endpoint + '</font></b></a> : : : '
   html += '</td><td height=65% width=100>.</td></tr></table><center>'
   html += get_footer('collections')
   return html
