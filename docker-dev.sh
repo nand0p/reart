@@ -12,10 +12,10 @@ sleep 2
 docker run --rm \
            --name reart-dev \
            --detach \
-           --publish 5000:5000 \
+           --publish 5006:5006 \
            reart-dev
 
 sleep 5
 docker ps
 docker logs reart-dev
-echo "docker run --rm --name reart-dev --tty --interactive --publish 5000:8000 reart-dev bash"
+echo "docker run --rm --name reart-dev --tty --interactive --publish 5006:5006 reart-dev bash"
