@@ -7,7 +7,7 @@ import os
 
 app = Flask(__name__)
 
-refresh = 45
+refresh = 300
 
 collections = [
                 'picasso',
