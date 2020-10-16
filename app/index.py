@@ -45,6 +45,9 @@ collections = [
                 'rossetti',
                 'blake',
                 'chinese',
+                'warhol',
+                'herri_met_de_bles',
+                'y_amano'
               ]
 
 
