@@ -47,7 +47,12 @@ collections = [
                 'chinese',
                 'warhol',
                 'herri_met_de_bles',
-                'y_amano'
+                'y_amano',
+                'paris_modern',
+                'neoimpressionist',
+                'sisley',
+                'morisot',
+                'catalonia',
               ]
 
 
@@ -64,10 +69,19 @@ def home():
 
 @app.route('/<collection>')
 def each_collection(collection):
-  url = get_image(collection)
+  url = get_image(collection, '../images/')
   html = get_header(collection)
   html += '<center><img src=' + url + ' height=95%><br>' + url.split('/')[-1]
   html += get_footer(collection)
+  return html
+
+
+@app.route('/all')
+def all_collections():
+  url = get_image('all', '../')
+  html = get_header('all')
+  html += '<center><img src=' + url + ' height=95%><br>' + url.split('/')[-1]
+  html += get_footer('all')
   return html
 
 
@@ -82,8 +96,8 @@ def get_header(collection):
          '<body bgcolor=black><font color=white>'
 
 
-def get_image(collection):
-  with open('../reart_' + collection + '_image_urls.json', 'r') as infile:
+def get_image(collection, path):
+  with open(path + 'reart_' + collection + '.json', 'r') as infile:
     images = json.load(infile)
   return random.choice(images)
 
